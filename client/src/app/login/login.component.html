@@ -1,0 +1,26 @@
+<div class="container">
+  <h1>Login</h1>
+  <form #loginForm="ngForm" (ngSubmit)="login()" autocomplete="off">
+
+    <mat-form-field class="field">
+      <mat-label>Email</mat-label>
+      <input name="email" [(ngModel)]="model.email" type="text" matInput placeholder="Ex. pat@example.com">
+    </mat-form-field>
+
+    <mat-form-field class="field">
+      <mat-label>Password</mat-label>
+      <input name="password" [(ngModel)]="model.password" type="password" matInput placeholder="Password">
+      
+    </mat-form-field>
+
+    <div class="buttons">
+      <button type="submit" mat-raised-button color="primary">Login</button>
+        <button routerLink="/home" mat-button>Cancel</button>
+      
+    </div>
+
+  </form>
+
+    
+
+</div>

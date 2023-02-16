@@ -1,0 +1,41 @@
+<main class="container">
+  <aside class="control_panel">
+    <mat-accordion>
+      <mat-expansion-panel (opened)="panelOpenState=true" (closed)="panelOpenState=false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>Categories</mat-panel-title>
+        </mat-expansion-panel-header>
+        <button mat-button class="category_btn" *ngFor="let category of categories">{{category.name}}</button>
+      </mat-expansion-panel>
+    </mat-accordion>
+    
+    <mat-divider></mat-divider>
+
+    <mat-radio-group class="radio_btns">
+      <mat-radio-button [checked]="true">0-$5</mat-radio-button>
+      <mat-radio-button>$5-$10</mat-radio-button>
+      <mat-radio-button>$10-$20</mat-radio-button>
+      <mat-radio-button>$20-$50</mat-radio-button>
+      <mat-radio-button [checked]="false">$50-$100</mat-radio-button>
+    </mat-radio-group>
+
+    <mat-divider></mat-divider>
+
+  </aside>
+  <section class="main_content">
+
+    <mat-card class="card" *ngFor="let product of products">
+      <div class="image_container">
+        <img src="https://via.placeholder.com/250">
+      </div>
+      <mat-card-content>
+        <mat-card-title>{{product.name}}</mat-card-title>
+        <mat-card-subtitle class="price">${{product.price}}</mat-card-subtitle>
+        <mat-card-subtitle>2 day delivery</mat-card-subtitle>
+        <mat-card-subtitle>Free Pickup</mat-card-subtitle>
+      </mat-card-content>
+    </mat-card>
+
+  </section>
+</main>
+

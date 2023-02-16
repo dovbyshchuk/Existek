@@ -1,0 +1,16 @@
+<mat-toolbar class="toolbar">
+  <a routerLink="home" class="logo">logo</a>
+  <form>
+    <mat-form-field class ="mat_form">
+      <input type="text" matInput [matAutocomplete]="auto" placeholder="search"/>
+      <mat-autocomplete #auto="matAutocomplete">
+        <mat-option *ngFor="let product of products" [value]="product">
+          {{product.name}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+  <button class="log_btn">
+    <mat-icon routerLink="register" class = "login">login</mat-icon>
+  </button>
+</mat-toolbar>
